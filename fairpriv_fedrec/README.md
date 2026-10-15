@@ -49,21 +49,6 @@ A GPU is strongly recommended for ML-1M (6,040 clients): `--device cuda --client
   For `--placement distributed` the attack is run against the update plus that client's *share* of the aggregate noise
   (an adversary that bypasses secure aggregation).
 
-## Read this before writing the paper
-
-* **Formal ε is weak where the model still works.** With ~2·10⁵ shared parameters and 100 rounds, local Gaussian noise
-  at usable accuracy gives ε in the millions (see `--exp epsilon`). Do not claim a meaningful DP guarantee at those
-  levels; present ε honestly and use the attack-accuracy curve as the empirical privacy evidence.
-* ε accounting: Gaussian RDP → (ε, δ), composed over participations, **no** amplification by client sampling
-  (upper bound). Local placement sensitivity 2C, distributed C. "No clipping" ⇒ ε = ∞.
-* Laplace `C/ε` (as in the plan) is exact ε-DP only for L1 clipping.
-* Simulation shortcut (exact in distribution): with local Gaussian noise the *sum* of the clients' noises is drawn once
-  (`privacy.py::process_chunk`); per-client noise is used for the attack.
-* Popularity counts / head–tail membership are assumed public aggregate statistics; the monitor's per-client scalar
-  report can be Laplace-noised with `fair.monitor_epsilon` (not included in the reported ε).
-* Server optimizer: Adam on the aggregated update (post-processing, no extra privacy cost) is the default because
-  literal SGD `θ ← θ − ηg` trained poorly in our tests. State this deviation.
-* Report the final round only; tune hyper-parameters on validation (`val_*` columns), not test.
 
 ## Layout
 
