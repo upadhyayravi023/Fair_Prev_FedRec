@@ -1,0 +1,127 @@
+{
+  "config": {
+    "SYNTHETIC": false,
+    "DATA_DIR": "/kaggle/working/data",
+    "OUT_DIR": "/kaggle/working/results",
+    "RATING_THRESHOLD": 4,
+    "MIN_USER_POS": 5,
+    "MIN_ITEM_POS": 10,
+    "SPLIT": "loo",
+    "HEAD_FRAC": 0.2,
+    "TOPK": 10,
+    "EMB_DIM": 8,
+    "MLP_HIDDEN": [
+      64,
+      32,
+      16
+    ],
+    "ROUNDS": 3000,
+    "CLIENTS_PER_ROUND": 2048,
+    "LOCAL_POS_BATCH": 64,
+    "NUM_NEG": 4,
+    "LR_SERVER": 0.02,
+    "LR_USER": 0.03,
+    "AGG_WEIGHT": "size",
+    "EVAL_EVERY": 100,
+    "LR_DECAY": true,
+    "SELECT_START_FRAC": 0.5,
+    "VERBOSE": true,
+    "CLIENT_CHUNK": 256,
+    "NOISE_MODE": "local",
+    "SIGMA_MAIN": 0.02,
+    "CLIP_NORM": null,
+    "DELTA": 1e-05,
+    "MECHANISM": "gaussian",
+    "EPS_LAPLACE": 1.0,
+    "BETA_MAIN": 2,
+    "POP_NORM": "log",
+    "GAP_TARGET_RATIO": 0.5,
+    "BETA_STEP": 0.25,
+    "BETA_MAX": 8.0,
+    "NDCG_TOL": 0.05,
+    "SEEDS": [
+      0,
+      1,
+      2
+    ],
+    "RUN_ABLATIONS": true,
+    "SIGMA_GRID": [
+      0.005,
+      0.01,
+      0.02,
+      0.04,
+      0.08
+    ],
+    "DIST_SIGMA_GRID": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "DIST_SIGMA_MAIN": 1.0,
+    "BETA_GRID": [
+      0.0,
+      1.0,
+      2.0,
+      4.0,
+      8.0
+    ],
+    "ATTACK_CLIENTS": 300,
+    "RUN_TUNING": true,
+    "TUNE_ROUNDS_DP": null,
+    "TUNE_ROUNDS": 800,
+    "TUNE_LR_SERVER": [
+      0.005,
+      0.01,
+      0.02
+    ],
+    "TUNE_LR_USER": [
+      0.03,
+      0.1
+    ],
+    "TUNE_SIGMA_GRID": [
+      0.005,
+      0.01,
+      0.02,
+      0.04
+    ],
+    "TUNE_FAIR_GRID": [
+      [
+        1,
+        "linear"
+      ],
+      [
+        2,
+        "linear"
+      ],
+      [
+        4,
+        "linear"
+      ],
+      [
+        8,
+        "linear"
+      ],
+      [
+        2,
+        "log"
+      ],
+      [
+        4,
+        "log"
+      ],
+      [
+        8,
+        "log"
+      ]
+    ],
+    "TUNE_KEEP": 0.9,
+    "SIGMA_SWEEP_FACTORS": [
+      0.25,
+      0.5,
+      1,
+      2,
+      4
+    ]
+  },
+  "clip_norm_C": 0.19328507822420862
+}
